@@ -1,9 +1,12 @@
-$(document).ready(function () {
-    var searchTemplate = $('#searchTemplate');
-//    var data = [
-//        {
-//            tblClass: 'districtTbl',
-//            chooseMsg: '<fmt:message key="label.choseDistrict" />'
-//        }];
+$(function () {
+
+    $("input[type='checkbox'].all").change(function () {
+        checkOtherCheckBoxes(this.name, this.checked);
+    });
+
+    function checkOtherCheckBoxes(name, checked) {
+        var allCheckboxes = $('input[name=' + name + ']');
+        allCheckboxes.prop('checked', checked);
+    }
 
 });

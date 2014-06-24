@@ -4,8 +4,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 
-<script src="/js/search.js" type="text/javascript"></script>
-
 <head><title>Поиск недвижимости</title></head>
 <body>
 <div id="content">
@@ -20,7 +18,7 @@
                             <fmt:message key="label.chosePaper"/>:
                         </td>
                         <td>
-                            <label class="inLine"><input type="checkbox" class="controls checkbox">
+                            <label class="inLine"><input type="checkbox" name="paper" class="all controls checkbox">
                             <fmt:message key="search.all"/> </label>
                         </td>
                     </tr>
@@ -45,7 +43,7 @@
                         </td>
                         <td>
                             <label class="inLine">
-                            <input type="checkbox" class="controls checkbox">
+                            <input type="checkbox" name="district" class="all controls checkbox">
                             <fmt:message key="search.all"/> </label>
                         </td>
                     </tr>
@@ -75,7 +73,7 @@
                         </td>
                         <td>
                             <label class="inLine">
-                            <input type="checkbox" class="controls checkbox">
+                            <input type="checkbox" name="type" class="all controls checkbox">
                             <fmt:message key="search.all"/> </label>
                         </td>
                     </tr>
@@ -84,7 +82,7 @@
                             <td></td>
                             <td class="toTop">
                                 <label class="inLine">
-                                <input type="checkbox" name="district" class="controls checkbox">
+                                <input type="checkbox" name="type" class="controls checkbox">
                                         ${t.description}
                                 </label>
                             </td>
@@ -102,7 +100,7 @@
                         </td>
                         <td>
                             <label class="inLine">
-                            <input type="checkbox" class="controls checkbox">
+                            <input type="checkbox" name="numRooms" class="all controls checkbox">
                             <fmt:message key="search.all"/> </label>
                         </td>
                     </tr>
@@ -111,7 +109,7 @@
                             <td></td>
                             <td class="toTop">
                                 <label class="inLine">
-                                <input type="checkbox" name="district" class="controls checkbox">
+                                <input type="checkbox" name="numRooms" class="controls checkbox">
                                 ${r.description} </label>
                             </td>
                         </tr>

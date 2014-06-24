@@ -42,9 +42,10 @@
         </tr>
         <tr>
         </tr>
-        <td><br/></td>
-        <td></td>
-        <td></td>
+        <td><hr></td>
+        <td> <hr></td>
+        <td>            <hr>
+        </td>
         <tr>
             <td>
                 <fmt:message key="phone.enter"/>:

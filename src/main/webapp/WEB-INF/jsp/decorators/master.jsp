@@ -12,7 +12,9 @@
     <script src="http://code.jquery.com/ui/1.10.2/jquery-ui.js" type="text/javascript"></script>
 <%--<script src="${pageContext.request.contextPath}/lib/jquery-1.11.1.js" type="text/javascript"></script>--%>
 <%--<script src="${pageContext.request.contextPath}/lib/jquery.tmpl.js" type="text/javascript"></script>--%>
+    <script src="${pageContext.request.contextPath}/js/main.js" type="text/javascript"></script>
     <script src="${pageContext.request.contextPath}/js/search.js" type="text/javascript"></script>
+    <script src="${pageContext.request.contextPath}/bootstrap/js/bootstrap.js" type="text/javascript"></script>
 
     <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.2/themes/smoothness/jquery-ui.css" />
     <link href="${pageContext.request.contextPath}/bootstrap/css/bootstrap.css" rel="stylesheet">
