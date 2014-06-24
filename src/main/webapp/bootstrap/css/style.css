@@ -1,0 +1,33 @@
+.inLine{
+    display: inline;
+    font-size: 18px;
+}
+.mainTbl{
+    width: 700px;
+}
+.toTop{
+    display:table-row;
+}
+.newspaperTbl, .typeTbl, .typeObjTbl, .districtTbl, .addPhone{
+    width: 340px;
+    font-size: 18px;
+}
+.addPhone{
+    width: 640px !important;
+}
+.mainLaber{
+    width: 170px;
+}
+input[type="checkbox"]{
+    width: 16px;
+    height: 16px;
+}
+.btn-success{
+    width: 120px;
+}
+.btn-group{
+    width: 600px;
+}
+.emptyTd{
+    width: 400px;
+}
