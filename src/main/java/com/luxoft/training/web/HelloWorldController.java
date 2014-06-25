@@ -5,8 +5,7 @@ import com.luxoft.training.server.service.ClientService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -34,8 +33,16 @@ public class HelloWorldController {
     }
 
     @RequestMapping(value = "/phoneNum")
-    public void phoneNum() {
+        public void phoneNum() {
     }
+
+    @RequestMapping(value = "/phoneNumSearch", method = RequestMethod.GET)
+    public
+    @ResponseBody
+    String getTime(String telNumber) {
+        return "hello";
+    }
+
     @RequestMapping(value = "/versionObjects")
     public void versionObjects( Model model) {
         Locale.setDefault(Locale.ENGLISH);

@@ -31,3 +31,8 @@ input[type="checkbox"]{
 .emptyTd{
     width: 400px;
 }
+
+.errorMessage{
+    color: red;
+    font-size: 14px;
+}
