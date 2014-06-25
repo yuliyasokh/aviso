@@ -66,11 +66,11 @@ public class ClientController {
         return REDIRECT_CLIENT;
     }
 
-    @RequestMapping("/search")
-    public String search(SearchQuery query, Model model) {
-        model.addAttribute("clients", svc.getByLastName(query.getSurnameQuery()));
-        return CLIENT_ALL;
-    }
+//    @RequestMapping("/search")
+//    public String search(SearchQuery query, Model model) {
+//        model.addAttribute("clients", svc.getByLastName(query.getSurnameQuery()));
+//        return CLIENT_ALL;
+//    }
 
     public ClientService getSvc() {
         return svc;
