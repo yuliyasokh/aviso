@@ -2,12 +2,14 @@ package com.luxoft.training.server.dao.impl;
 
 
 import com.luxoft.training.server.dao.DictionaryDao;
+import com.luxoft.training.server.exception.AttributeNotFoundException;
 import com.luxoft.training.server.model.Attribute;
 import com.luxoft.training.server.model.GroupType;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 
 import javax.sql.DataSource;
+import java.util.ArrayList;
 import java.util.List;
 
 public class DictionaryImpl implements DictionaryDao{
@@ -49,7 +51,15 @@ public class DictionaryImpl implements DictionaryDao{
         return getAllAttributes(GroupType.NUMBER_OF_ROOMS.getCode());
     }
 
-    private List<Attribute> getAllAttributes(String code){
-        return jdbcTemplate.query(QUERY, new BeanPropertyRowMapper<Attribute>(Attribute.class), code);
+    private List<Attribute> getAllAttributes(String code) {
+        List<Attribute> attributes = jdbcTemplate.query(QUERY, new BeanPropertyRowMapper<Attribute>(Attribute.class), code);
+        try {
+            if (attributes.isEmpty()) {
+                throw new AttributeNotFoundException();
+            }
+        } catch (AttributeNotFoundException e) {
+            e.printStackTrace();
+        }
+        return attributes;
     }
 }
