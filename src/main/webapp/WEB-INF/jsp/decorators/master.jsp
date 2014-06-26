@@ -31,10 +31,10 @@
         <div class="navbar-inner">
             <a class="brand" href="${pageContext.request.contextPath}/search/">Работа с недвижимостью</a>
             <ul class="nav">
-                <li class="active"><a href="${pageContext.request.contextPath}/search/">Поиск недвижимости</a></li>
-                <li><a href="${pageContext.request.contextPath}/phoneNum/">Телефоный справочник</a></li>
-                <li><a href="${pageContext.request.contextPath}/versionObjects/">Версии источников</a></li>
-                <li><a href="${pageContext.request.contextPath}/phoneNum/">Объекты недвижимости</a></li>
+                <li id="search_nav"><a href="${pageContext.request.contextPath}/search/">Поиск недвижимости</a></li>
+                <li id="phoneNum_nav"><a href="${pageContext.request.contextPath}/phoneNum/">Телефоный справочник</a></li>
+                <li id="versionObjects_nav"><a href="${pageContext.request.contextPath}/versionObjects/">Версии источников</a></li>
+                <li id="objects_nav"><a href="${pageContext.request.contextPath}/phoneNum/">Объекты недвижимости</a></li>
             </ul>
         </div>
     </div>
