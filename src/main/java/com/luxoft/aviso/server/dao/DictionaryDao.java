@@ -5,7 +5,6 @@ import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
-@Repository
 public interface DictionaryDao {
 
     List<Attribute> getAllDistricts();
@@ -15,6 +14,8 @@ public interface DictionaryDao {
     List<Attribute> getAllObjectTypes();
 
     List<Attribute> getAllNumberOfRooms();
+
+    Attribute getAttributeByIdAndType(Integer attrId, String code);
 
 
 }

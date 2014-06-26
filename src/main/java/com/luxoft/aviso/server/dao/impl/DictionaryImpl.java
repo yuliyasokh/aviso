@@ -24,7 +24,9 @@ public class DictionaryImpl implements DictionaryDao{
                             "JOIN attr_dictionary ad ON ad.attr_id = g.grp_id " +
                                 "WHERE ad.attr_name =:code " +
                                 "AND a.attr_status = 1 " +
-                                "AND g.attr_ui_status = 1";
+                                "AND g.attr_ui_status = 1 ";
+
+    private static String GET_BY_ID = "AND a.attr_id =:id";
 
     private JdbcTemplate jdbcTemplate;
 
@@ -51,6 +53,11 @@ public class DictionaryImpl implements DictionaryDao{
     @Override
     public List<Attribute> getAllNumberOfRooms() {
         return getAllAttributes(GroupType.NUMBER_OF_ROOMS.getCode());
+    }
+
+    @Override
+    public Attribute getAttributeByIdAndType(Integer attrId, String code) {
+        return jdbcTemplate.queryForObject(QUERY + GET_BY_ID, new BeanPropertyRowMapper<Attribute>(Attribute.class), code, attrId);
     }
 
     private List<Attribute> getAllAttributes(String code) {

@@ -1,6 +1,8 @@
 package com.luxoft.aviso.web;
 
+import com.luxoft.aviso.server.model.Phone;
 import com.luxoft.aviso.server.service.DictionaryService;
+import com.luxoft.aviso.server.service.PhoneService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -8,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import java.util.List;
 import java.util.Locale;
 
 @Controller
@@ -17,6 +20,9 @@ public class SearchController {
 
     @Autowired
     private DictionaryService dictionaryService;
+
+    @Autowired
+    private PhoneService phoneService;
 
     @RequestMapping(value = "/search")
     public String mainSearch( Model model) {
@@ -36,7 +42,9 @@ public class SearchController {
     @RequestMapping(value = "/phoneNumSearch", method = RequestMethod.GET)
     public
     @ResponseBody
-    String getTime(String telNumber) {
+    String getTime() {
+        Locale.setDefault(Locale.ENGLISH);
+        List<Phone> phones = phoneService.getAllPhones();
         return "hello";
     }
 
