@@ -36,20 +36,10 @@
 
     </bean>
 
-
     <!--aspects-->
     <aop:aspectj-autoproxy/>
 
     <!-- DAO layer -->
     <tx:annotation-driven/>
-
-    <bean id="dictionaryDao" class="com.luxoft.aviso.server.dao.impl.DictionaryImpl">
-        <property name="dataSource" ref="springDataSource"/>
-    </bean>
-
-    <!--Services-->
-    <bean id="dictionaryService" class="com.luxoft.aviso.server.service.impl.DictionaryServiceImpl"
-          c:dictionaryDao-ref="dictionaryDao"
-           />
 
 </beans>

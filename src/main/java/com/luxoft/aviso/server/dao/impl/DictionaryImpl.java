@@ -5,12 +5,15 @@ import com.luxoft.aviso.server.dao.DictionaryDao;
 import com.luxoft.aviso.server.exception.AttributeNotFoundException;
 import com.luxoft.aviso.server.model.Attribute;
 import com.luxoft.aviso.server.model.GroupType;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.stereotype.Repository;
 
 import javax.sql.DataSource;
 import java.util.List;
 
+@Repository
 public class DictionaryImpl implements DictionaryDao{
 
     private static String QUERY ="SELECT  a.attr_id as id, " +
@@ -25,10 +28,10 @@ public class DictionaryImpl implements DictionaryDao{
 
     private JdbcTemplate jdbcTemplate;
 
+    @Autowired
     public void setDataSource(DataSource dataSource) {
         this.jdbcTemplate = new JdbcTemplate(dataSource);
     }
-
 
     @Override
     public List<Attribute> getAllDistricts() {

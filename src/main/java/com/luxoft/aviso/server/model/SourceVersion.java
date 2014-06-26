@@ -9,12 +9,12 @@ import java.util.Date;
  * Time: 14:38
  * To change this template use File | Settings | File Templates.
  */
-public class Paper {
+public class SourceVersion {
     private Integer paperId;
     private String paperName;
     private Date version;
 
-    public Paper(Integer paperId, String paperName, Date version) {
+    public SourceVersion(Integer paperId, String paperName, Date version) {
         this.paperId = paperId;
         this.paperName = paperName;
         this.version = version;
