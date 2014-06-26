@@ -32,9 +32,9 @@ CREATE TABLE VERSION(
  
 CREATE TABLE PHONE(  
    phone_id   	NUMBER(10) 		NOT NULL, 
-   phone_num  	NUMBER(9) 		NOT NULL,
+   phone_num  	VARCHAR2(10) 		NOT NULL,
    phone_desc 	NVARCHAR2(50) 	NOT NULL,
-   phone_src_id NUMBER(5) 		NOT NULL,
+   phone_src_id NUMBER(5)         ,
    phone_date 	DATE 			NOT NULL,
    phone_status NUMBER(1) 		NOT NULL
  );
@@ -49,8 +49,8 @@ CREATE TABLE OBJECT(
  
  CREATE TABLE OBJECT_PHONE(  
    object_phone_id  NUMBER(10) NOT NULL, 
-   object_id  		NUMBER(10) NOT NULL,
-   phone_num 		NUMBER(9)  NOT NULL
+   object_id  		  NUMBER(10) NOT NULL,
+   phone_num 		    VARCHAR2(10)  NOT NULL
  );
  
 --creating primary keys 

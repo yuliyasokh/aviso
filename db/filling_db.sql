@@ -16,61 +16,61 @@ CREATE SEQUENCE OBJECT_PHONE_SEQ 	INCREMENT BY 1 START WITH 1000;
 
 
 INSERT INTO ATTR_DICTIONARY(attr_id, attr_name, attr_desc, attr_status) 
-	VALUES (ATTR_SEQ.NEXTVAL, 'SRC', 'Источники', 1);
+	VALUES (ATTR_SEQ.NEXTVAL, 'SRC', 'пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ', 1);
 INSERT INTO ATTR_DICTIONARY(attr_id, attr_name, attr_desc, attr_status) 
-	VALUES (ATTR_SEQ.NEXTVAL, 'TYP', 'Типы объектов', 1);	
+	VALUES (ATTR_SEQ.NEXTVAL, 'TYP', 'пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ', 1);	
 INSERT INTO ATTR_DICTIONARY(attr_id, attr_name, attr_desc, attr_status) 
-	VALUES (ATTR_SEQ.NEXTVAL, 'DSTR', 'Районы', 1);
+	VALUES (ATTR_SEQ.NEXTVAL, 'DSTR', 'пїЅпїЅпїЅпїЅпїЅпїЅ', 1);
 INSERT INTO ATTR_DICTIONARY(attr_id, attr_name, attr_desc, attr_status) 
-	VALUES (ATTR_SEQ.NEXTVAL, 'NRM', 'Количество комнат', 1);	
+	VALUES (ATTR_SEQ.NEXTVAL, 'NRM', 'пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ', 1);	
 	
 	
 INSERT INTO ATTR_DICTIONARY(attr_id, attr_name, attr_desc, attr_status) 
-	VALUES (ATTR_SEQ.NEXTVAL, 'AVS', 'Авизо', 1);
+	VALUES (ATTR_SEQ.NEXTVAL, 'AVS', 'пїЅпїЅпїЅпїЅпїЅ', 1);
 INSERT INTO ATTR_GRP(attr_grp_id, attr_id, grp_id, attr_ui_status) 
 	VALUES (ATTR_GRP_SEQ.NEXTVAL, ATTR_SEQ.CURRVAL, 1, 1);	
 	
 INSERT INTO ATTR_DICTIONARY(attr_id, attr_name, attr_desc, attr_status) 
-	VALUES (ATTR_SEQ.NEXTVAL, 'MKL', 'Маклер', 1);
+	VALUES (ATTR_SEQ.NEXTVAL, 'MKL', 'пїЅпїЅпїЅпїЅпїЅпїЅ', 1);
 INSERT INTO ATTR_GRP(attr_grp_id, attr_id, grp_id, attr_ui_status) 
 	VALUES (ATTR_GRP_SEQ.NEXTVAL, ATTR_SEQ.CURRVAL, 1, 1);	
 	
 INSERT INTO ATTR_DICTIONARY(attr_id, attr_name, attr_desc, attr_status) 
-	VALUES (ATTR_SEQ.NEXTVAL, 'SLD', 'Сландо', 1);
+	VALUES (ATTR_SEQ.NEXTVAL, 'SLD', 'пїЅпїЅпїЅпїЅпїЅпїЅ', 1);
 INSERT INTO ATTR_GRP(attr_grp_id, attr_id, grp_id, attr_ui_status) 
 	VALUES (ATTR_GRP_SEQ.NEXTVAL, ATTR_SEQ.CURRVAL, 1, 1);	
 	
 INSERT INTO ATTR_DICTIONARY(attr_id, attr_name, attr_desc, attr_status) 
-	VALUES (ATTR_SEQ.NEXTVAL, 'HND', 'Вручную', 1);
+	VALUES (ATTR_SEQ.NEXTVAL, 'HND', 'пїЅпїЅпїЅпїЅпїЅпїЅпїЅ', 1);
 INSERT INTO ATTR_GRP(attr_grp_id, attr_id, grp_id, attr_ui_status) 
 	VALUES (ATTR_GRP_SEQ.NEXTVAL, ATTR_SEQ.CURRVAL, 1, 0);	
 	
 INSERT INTO ATTR_DICTIONARY(attr_id, attr_name, attr_desc, attr_status) 
-	VALUES (ATTR_SEQ.NEXTVAL, 'APP', 'Кваритиры', 1);
+	VALUES (ATTR_SEQ.NEXTVAL, 'APP', 'пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ', 1);
 INSERT INTO ATTR_GRP(attr_grp_id, attr_id, grp_id, attr_ui_status) 
 	VALUES (ATTR_GRP_SEQ.NEXTVAL, ATTR_SEQ.CURRVAL, 2, 1);
 	
 INSERT INTO ATTR_DICTIONARY(attr_id, attr_name, attr_desc, attr_status) 
-	VALUES (ATTR_SEQ.NEXTVAL, 'HSE', 'Дом', 1);
+	VALUES (ATTR_SEQ.NEXTVAL, 'HSE', 'пїЅпїЅпїЅ', 1);
 INSERT INTO ATTR_GRP(attr_grp_id, attr_id, grp_id, attr_ui_status) 
 	VALUES (ATTR_GRP_SEQ.NEXTVAL, ATTR_SEQ.CURRVAL, 2, 1);
 	
 INSERT INTO ATTR_DICTIONARY(attr_id, attr_name, attr_desc, attr_status) 
-	VALUES (ATTR_SEQ.NEXTVAL, 'RM', 'Комната', 1);
+	VALUES (ATTR_SEQ.NEXTVAL, 'RM', 'пїЅпїЅпїЅпїЅпїЅпїЅпїЅ', 1);
 INSERT INTO ATTR_GRP(attr_grp_id, attr_id, grp_id, attr_ui_status) 
 	VALUES (ATTR_GRP_SEQ.NEXTVAL, ATTR_SEQ.CURRVAL, 2, 1);
 	
 INSERT INTO ATTR_DICTIONARY(attr_id, attr_name, attr_desc, attr_status) 
-	VALUES (ATTR_SEQ.NEXTVAL, 'PLT', 'Участок', 1);	
+	VALUES (ATTR_SEQ.NEXTVAL, 'PLT', 'пїЅпїЅпїЅпїЅпїЅпїЅпїЅ', 1);	
 INSERT INTO ATTR_GRP(attr_grp_id, attr_id, grp_id, attr_ui_status) 
 	VALUES (ATTR_GRP_SEQ.NEXTVAL, ATTR_SEQ.CURRVAL, 2, 1);
 	
 INSERT INTO ATTR_DICTIONARY(attr_id, attr_name, attr_desc, attr_status) 
-	VALUES (ATTR_SEQ.NEXTVAL, 'SVR', 'Суворовский', 1);
+	VALUES (ATTR_SEQ.NEXTVAL, 'SVR', 'пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ', 1);
 INSERT INTO ATTR_GRP(attr_grp_id, attr_id, grp_id, attr_ui_status) 
 	VALUES (ATTR_GRP_SEQ.NEXTVAL, ATTR_SEQ.CURRVAL, 3, 1);	
 INSERT INTO ATTR_DICTIONARY(attr_id, attr_name, attr_desc, attr_status) 
-	VALUES (ATTR_SEQ.NEXTVAL, 'PRM', 'Приморский', 1);
+	VALUES (ATTR_SEQ.NEXTVAL, 'PRM', 'пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ', 1);
 INSERT INTO ATTR_GRP(attr_grp_id, attr_id, grp_id, attr_ui_status) 
 	VALUES (ATTR_GRP_SEQ.NEXTVAL, ATTR_SEQ.CURRVAL, 3, 1);	
 	
@@ -98,6 +98,16 @@ INSERT INTO ATTR_DICTIONARY(attr_id, attr_name, attr_desc, attr_status)
 	VALUES (ATTR_SEQ.NEXTVAL, 'FPLUS', '4+', 1);	
 INSERT INTO ATTR_GRP(attr_grp_id, attr_id, grp_id, attr_ui_status) 
 	VALUES (ATTR_GRP_SEQ.NEXTVAL, ATTR_SEQ.CURRVAL, 4, 1);
+
+INSERT INTO PHONE(phone_id, phone_num, phone_desc, phone_src_id, phone_date, phone_status)
+	VALUES (PHONE_SEQ.NEXTVAL, '0936783813', 'my phone number', null, SYSDATE, 1);
+
+INSERT INTO PHONE(phone_id, phone_num, phone_desc, phone_src_id, phone_date, phone_status)
+	VALUES (PHONE_SEQ.NEXTVAL, '0935325514', 'phone number from aviso', 5, SYSDATE, 1);
+
+INSERT INTO PHONE(phone_id, phone_num, phone_desc, phone_src_id, phone_date, phone_status)
+	VALUES (PHONE_SEQ.NEXTVAL, '0675325598', 'phone number from makler', 6, SYSDATE, 1);
+
 
 commit;	
 	
