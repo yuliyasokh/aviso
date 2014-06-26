@@ -10,7 +10,7 @@
        http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.5.xsd http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd">
 
     <context:annotation-config/>
-    <context:component-scan base-package="com.luxoft.training.server"/>
+    <context:component-scan base-package="com.luxoft.aviso.server"/>
 
     <context:property-placeholder properties-ref="properties"/>
 
@@ -43,16 +43,12 @@
     <!-- DAO layer -->
     <tx:annotation-driven/>
 
-    <bean id="dictionaryDao" class="com.luxoft.training.server.dao.impl.DictionaryImpl">
+    <bean id="dictionaryDao" class="com.luxoft.aviso.server.dao.impl.DictionaryImpl">
         <property name="dataSource" ref="springDataSource"/>
     </bean>
 
-    <!--<bean id="clientDao" class="com.luxoft.training.server.dao.impl.JdbcClientDaoImpl"-->
-          <!--c:ds-ref="dataSource"/>-->
-
-
     <!--Services-->
-    <bean id="dictionaryService" class="com.luxoft.training.server.service.impl.DictionaryServiceImpl"
+    <bean id="dictionaryService" class="com.luxoft.aviso.server.service.impl.DictionaryServiceImpl"
           c:dictionaryDao-ref="dictionaryDao"
            />
 

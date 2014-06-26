@@ -2,6 +2,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
     <body>
-    <jsp:include page="client.all.jsp"/>
+    <jsp:include page="search.all.jsp"/>
     </body>
 </html>

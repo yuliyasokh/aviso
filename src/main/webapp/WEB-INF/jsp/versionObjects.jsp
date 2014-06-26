@@ -8,19 +8,19 @@
 <body>
 <div id="content">
     <table class="table table-striped">
-        <jstl:forEach items="${papers}" var="paper">
-            <tr>
-                <td>${paper.paperName}</td>
-                <td>${paper.version}</td>
-                <td>
-                    <div class="btn-group">
-                        <a class="btn btn-info" href="${paper.paperId}">
-                            <fmt:message key="action.startParser"/>
-                        </a>
-                    </div>
-                </td>
-            </tr>
-        </jstl:forEach>
+        <%--<jstl:forEach items="${papers}" var="paper">--%>
+            <%--<tr>--%>
+                <%--<td>${paper.paperName}</td>--%>
+                <%--<td>${paper.version}</td>--%>
+                <%--<td>--%>
+                    <%--<div class="btn-group">--%>
+                        <%--<a class="btn btn-info" href="${paper.paperId}">--%>
+                            <%--<fmt:message key="action.startParser"/>--%>
+                        <%--</a>--%>
+                    <%--</div>--%>
+                <%--</td>--%>
+            <%--</tr>--%>
+        <%--</jstl:forEach>--%>
     </table>
    </div>
 </body>

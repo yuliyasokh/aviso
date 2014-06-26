@@ -29,7 +29,7 @@
 <div contactId="container">
     <div class="navbar">
         <div class="navbar-inner">
-            <a class="brand" href="${pageContext.request.contextPath}/client/">Работа с недвижимостью</a>
+            <a class="brand" href="${pageContext.request.contextPath}/search/">Работа с недвижимостью</a>
             <ul class="nav">
                 <li class="active"><a href="${pageContext.request.contextPath}/search/">Поиск недвижимости</a></li>
                 <li><a href="${pageContext.request.contextPath}/phoneNum/">Телефоный справочник</a></li>

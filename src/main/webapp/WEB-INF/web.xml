@@ -42,7 +42,7 @@
 
     <filter>
         <filter-name>staticContentFilter</filter-name>
-        <filter-class>com.luxoft.training.web.util.StaticContentFilter</filter-class>
+        <filter-class>com.luxoft.aviso.web.util.StaticContentFilter</filter-class>
     </filter>
 
 
@@ -81,7 +81,7 @@
         <url-pattern>/</url-pattern>
     </servlet-mapping>
     <welcome-file-list>
-        <welcome-file>client.all.jsp</welcome-file>
+        <welcome-file>search.all.jsp</welcome-file>
     </welcome-file-list>
 
 </web-app>
