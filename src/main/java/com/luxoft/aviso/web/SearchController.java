@@ -42,9 +42,9 @@ public class SearchController {
     @RequestMapping(value = "/phoneNumSearch", method = RequestMethod.GET)
     public
     @ResponseBody
-    String getTime() {
+    String getTime(String phoneNumber) {
         Locale.setDefault(Locale.ENGLISH);
-        List<Phone> phones = phoneService.getAllPhones();
+        Phone phone = phoneService.getPhoneByNumber(phoneNumber);
         return "hello";
     }
 

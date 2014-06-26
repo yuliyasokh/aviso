@@ -18,6 +18,10 @@ import java.util.List;
 @Repository
 public class PhoneImpl implements PhoneDao{
 
+    private static String GET_PHONES = "SELECT * FROM phone WHERE 1 = 1";
+    private static String BY_NUMBER = " AND phone_num =: phoneNumber ";
+    private static String BY_ID = " AND PHONE_ID =: phoneId ";
+
     @Autowired
     private DictionaryDao dictionaryDao;
 
@@ -30,12 +34,12 @@ public class PhoneImpl implements PhoneDao{
 
     @Override
     public Phone getPhoneByNumber(String phoneNumber) {
-        return null;
+        return (Phone)jdbcTemplate.queryForObject(GET_PHONES + BY_NUMBER, new PhoneRowMapper(), phoneNumber);
     }
 
     @Override
     public Phone getPhoneById(Integer phoneId) {
-        return null;
+        return (Phone)jdbcTemplate.queryForObject(GET_PHONES + BY_ID, new PhoneRowMapper(), phoneId);
     }
 
     @Override
@@ -60,8 +64,7 @@ public class PhoneImpl implements PhoneDao{
 
     @Override
     public List<Phone> getAllPhones() {
-        List<Phone> phones = jdbcTemplate.query("select * from phone", new PhoneRowMapper());
-        return phones;
+        return jdbcTemplate.query("select * from phone", new PhoneRowMapper());
     }
 
     private class PhoneRowMapper implements RowMapper{

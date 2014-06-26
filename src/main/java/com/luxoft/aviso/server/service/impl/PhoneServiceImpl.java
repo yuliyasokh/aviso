@@ -18,12 +18,12 @@ public class PhoneServiceImpl implements PhoneService{
 
     @Override
     public Phone getPhoneByNumber(String phoneNumber) {
-        return null;
+        return phoneDao.getPhoneByNumber(phoneNumber);
     }
 
     @Override
     public Phone getPhoneById(Integer phoneId) {
-        return null;
+        return phoneDao.getPhoneById(phoneId);
     }
 
     @Override
