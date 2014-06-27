@@ -4,27 +4,37 @@ $(function () {
         modifyTelNumber('#phoneNumberSearch');
     });
 
-    $('#phoneNumberAdd').mouseout(function () {
-        modifyTelNumber('#phoneNumberAdd');
-    });
-
     $('#searchTel').click(function () {
+        $("#phoneDetails").empty();
         var telNumber = $.trim($('#phoneNumberSearch').val());
         if (telNumber.length == 13 && isNumeric(telNumber)) {
-            $.ajax({
-                type: 'GET',
-                url : 'phoneNumSearch',
-                data : { telNumber: telNumber},
-                dataType: 'json',
-                success : function(data) {
-                    alert(data);
-                }
-            });
+            numberNotFound(telNumber);
+//            $.ajax({
+//                type: 'GET',
+//                url : 'phoneNumSearch',
+//                data : { telNumber: telNumber},
+//                dataType: 'json',
+//                success : successHandler
+//            });
 
         } else {
             errorTelNumber('#searchTelMsg', telNumber);
         }
     });
+
+    function addNewPhoneNumber() {
+//        var data = [{phoneNumber: $("#phoneNumberSearch").val()}];
+//        $("#addPhoneNumberTemplate").tmpl(data).appendTo("#phoneDetails");
+//        return false;
+    }
+
+    function successHandler(data){
+        $("#phoneDetails").empty();
+
+    }
+    function numberNotFound(telNumber){
+        $("#phoneNotFoundTemplate").tmpl().appendTo("#phoneDetails");
+    }
 
     function modifyTelNumber(idSelector) {
         var telNumber = $.trim($(idSelector).val()).replace(/\s+/g, '');
@@ -43,7 +53,7 @@ $(function () {
     }
 
     function isNumeric(str) {
-        return /^\d+$/.test(str);
+        return /^ *[0-9][0-9 ]*$/.test(str);
     }
 
 })

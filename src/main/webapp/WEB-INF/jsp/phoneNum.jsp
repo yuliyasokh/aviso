@@ -10,6 +10,7 @@
 </head>
 <body>
 <div id="content">
+    <jsp:include page="templates.jsp" />
     <table class="addPhone">
         <tr>
                 <td>
@@ -31,39 +32,13 @@
                 <div id="searchTelMsg"></div>
             </td>
         </tr>
-        <td>
-            <hr>
-        </td>
-        <td>
-            <hr>
-        </td>
-        <td>
-            <hr>
-        </td>
-        <tr>
-            <td>
-                <fmt:message key="phone.enter"/>:
-            </td>
-            <td>
-                <input type='tel' id='phoneNumberAdd' pattern="[0][0-9]{2}\s[0-9]{3}\s[0-9]{2}\s[0-9]{2}"
-                       title='(Формат: 063 123 45 67)'>
-            </td>
-            <td>
-            </td>
-        </tr>
-        </tr>
-        <td>
-            <fmt:message key="phone.description"/>:
-        </td>
-        <td>
-            <textarea id="descr"></textarea>
-        </td>
-        <td>
-            <button type="button" class="btn-success btn-large"><fmt:message key="action.add"/></button>
-        </td>
-        </tr>
     </table>
+<br>
+    <hr>
+    <br>
 </div>
+
+<div id="phoneDetails"></div>
 
 </body>
 </html>
