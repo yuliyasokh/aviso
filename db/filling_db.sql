@@ -99,14 +99,14 @@ INSERT INTO ATTR_DICTIONARY(attr_id, attr_name, attr_desc, attr_status)
 INSERT INTO ATTR_GRP(attr_grp_id, attr_id, grp_id, attr_ui_status) 
 	VALUES (ATTR_GRP_SEQ.NEXTVAL, ATTR_SEQ.CURRVAL, 4, 1);
 
-INSERT INTO PHONE(phone_id, phone_num, phone_desc, phone_src_id, phone_date, phone_status)
+INSERT INTO PHONE(phone_id, phone_num, phone_desc, phone_src_id, phone_date, last_update_date, phone_status)
 	VALUES (PHONE_SEQ.NEXTVAL, '0936783813', 'my phone number', null, SYSDATE, 1);
 
-INSERT INTO PHONE(phone_id, phone_num, phone_desc, phone_src_id, phone_date, phone_status)
-	VALUES (PHONE_SEQ.NEXTVAL, '0935325514', 'phone number from aviso', 5, SYSDATE, 1);
+INSERT INTO PHONE(phone_id, phone_num, phone_desc, phone_src_id, phone_date, last_update_date, phone_status)
+	VALUES (PHONE_SEQ.NEXTVAL, '0935325514', 'phone number from aviso', 5, SYSDATE, SYSDATE, 1);
 
-INSERT INTO PHONE(phone_id, phone_num, phone_desc, phone_src_id, phone_date, phone_status)
-	VALUES (PHONE_SEQ.NEXTVAL, '0675325598', 'phone number from makler', 6, SYSDATE, 1);
+INSERT INTO PHONE(phone_id, phone_num, phone_desc, phone_src_id, phone_date, last_update_date, phone_status)
+	VALUES (PHONE_SEQ.NEXTVAL, '0675325598', 'phone number from makler', 6, SYSDATE, SYSDATE, 1);
 
 
 commit;	
