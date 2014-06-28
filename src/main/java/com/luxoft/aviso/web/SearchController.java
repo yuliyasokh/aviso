@@ -39,13 +39,12 @@ public class SearchController {
     public void phoneNum() {
     }
 
-    @RequestMapping(value = "/phoneNumSearch", method = RequestMethod.GET)
+    @RequestMapping(value = "/phoneNum/phoneNumSearch", method = RequestMethod.GET)
     public
     @ResponseBody
-    String getTime(String phoneNumber) {
+    Phone getPhoneByNumber(String telNumber) {
         Locale.setDefault(Locale.ENGLISH);
-        Phone phone = phoneService.getPhoneByNumber(phoneNumber);
-        return "hello";
+        return phoneService.getPhoneByNumber(telNumber);
     }
 
 }

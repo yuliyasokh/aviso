@@ -8,10 +8,8 @@
 
     <title><decorator:title default="Недвижимость"/></title>
     <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
-    <script src="http://ajax.aspnetcdn.com/ajax/jquery.templates/beta1/jquery.tmpl.js" type="text/javascript"></script>
     <script src="http://code.jquery.com/ui/1.10.2/jquery-ui.js" type="text/javascript"></script>
-    <%--<script src="${pageContext.request.contextPath}/js/jquery-1.11.1.js" type="text/javascript"></script>--%>
-<%--<script src="${pageContext.request.contextPath}/libs/jquery.tmpl.js" type="text/javascript"></script>--%>
+    <script src="http://ajax.microsoft.com/ajax/jquery.templates/beta1/jquery.tmpl.js" type="text/javascript"></script>
     <script src="${pageContext.request.contextPath}/js/main.js" type="text/javascript"></script>
     <script src="${pageContext.request.contextPath}/js/search.js" type="text/javascript"></script>
     <script src="${pageContext.request.contextPath}/js/phoneNum.js" type="text/javascript"></script>

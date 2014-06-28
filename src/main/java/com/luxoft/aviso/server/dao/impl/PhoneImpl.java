@@ -34,7 +34,11 @@ public class PhoneImpl implements PhoneDao{
 
     @Override
     public Phone getPhoneByNumber(String phoneNumber) {
-        return (Phone)jdbcTemplate.queryForObject(GET_PHONES + BY_NUMBER, new PhoneRowMapper(), phoneNumber);
+        List<Phone> phones = jdbcTemplate.query(GET_PHONES + BY_NUMBER, new PhoneRowMapper(), phoneNumber);
+        if (!phones.isEmpty()) {
+            return phones.get(0);
+        }
+        return new Phone();
     }
 
     @Override

@@ -37,6 +37,7 @@
     <hr>
     <br>
 </div>
+<ul id="results"></ul>
 
 <div id="phoneDetails"></div>
 

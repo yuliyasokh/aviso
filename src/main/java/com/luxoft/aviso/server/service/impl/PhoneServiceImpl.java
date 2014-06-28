@@ -18,7 +18,10 @@ public class PhoneServiceImpl implements PhoneService{
 
     @Override
     public Phone getPhoneByNumber(String phoneNumber) {
-        return phoneDao.getPhoneByNumber(phoneNumber);
+        if (phoneNumber!=null && !phoneNumber.isEmpty()){
+            return phoneDao.getPhoneByNumber(phoneNumber.replace(" ", ""));
+        }
+        return null;
     }
 
     @Override
