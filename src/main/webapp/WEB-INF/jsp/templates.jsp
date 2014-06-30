@@ -53,7 +53,6 @@
                 <input type='text' disabled value="\${phoneAddedDate}">
             </td>
         </tr>
-        <c:if test="${not empty phoneSource}">
             <tr>
                 <td>
                     <fmt:message key="phone.source"/>:
@@ -64,7 +63,6 @@
                     <input type='text' disabled value="\${phoneSource.description}">
                 </td>
             </tr>
-        </c:if>
         <tr>
             <td>
                 <fmt:message key="phone.description"/>:

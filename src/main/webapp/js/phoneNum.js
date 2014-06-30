@@ -32,12 +32,13 @@ $(function () {
     }
     function updatePhone(data){
         var updatePhoneTemplate = $("#updatePhoneNumberTemplate");
+        var source = data.phoneSource ? data.phoneSource.description : "";
         var data = [
             {
                 phoneId: data.phoneId,
                 phoneNumber: data.phoneNumber,
                 phoneAddedDate: data.phoneAddedDate,
-                phoneSource: data.phoneSource,
+                phoneSource: source,
                 phoneDescription: data.phoneDescription
             }
         ];
