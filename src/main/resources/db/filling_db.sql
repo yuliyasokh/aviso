@@ -8,61 +8,61 @@ CREATE SEQUENCE OBJECT_PHONE_SEQ 	INCREMENT BY 1 START WITH 1000;
 
 
 INSERT INTO ATTR_DICTIONARY(attr_id, attr_name, attr_desc, attr_status) 
-	VALUES (NEXT VALUE FOR  ATTR_SEQ, 'SRC', 'aaa', 1);
+	VALUES (NEXT VALUE FOR  ATTR_SEQ, 'SRC', 'Источники', 1);
 INSERT INTO ATTR_DICTIONARY(attr_id, attr_name, attr_desc, attr_status) 
-	VALUES (NEXT VALUE FOR ATTR_SEQ, 'TYP', '���� ��������', 1);
+	VALUES (NEXT VALUE FOR ATTR_SEQ, 'TYP', 'Типы объектов', 1);
 INSERT INTO ATTR_DICTIONARY(attr_id, attr_name, attr_desc, attr_status)
-	VALUES (NEXT VALUE FOR ATTR_SEQ, 'DSTR', '������', 1);
+	VALUES (NEXT VALUE FOR ATTR_SEQ, 'DSTR', 'Районы', 1);
 INSERT INTO ATTR_DICTIONARY(attr_id, attr_name, attr_desc, attr_status) 
-	VALUES (NEXT VALUE FOR ATTR_SEQ, 'NRM', '���������� ������', 1);
+	VALUES (NEXT VALUE FOR ATTR_SEQ, 'NRM', 'Количество комнат', 1);
 	
 	
 INSERT INTO ATTR_DICTIONARY(attr_id, attr_name, attr_desc, attr_status) 
-	VALUES (NEXT VALUE FOR ATTR_SEQ, 'AVS', '�����', 1);
+	VALUES (NEXT VALUE FOR ATTR_SEQ, 'AVS', 'Авизо', 1);
 INSERT INTO ATTR_GRP(attr_grp_id, attr_id, grp_id, attr_ui_status) 
 	VALUES (NEXT VALUE FOR ATTR_GRP_SEQ, CURRENT VALUE FOR ATTR_SEQ, 1, 2);
 	
 INSERT INTO ATTR_DICTIONARY(attr_id, attr_name, attr_desc, attr_status) 
-	VALUES (NEXT VALUE FOR ATTR_SEQ, 'MKL', '������', 1);
+	VALUES (NEXT VALUE FOR ATTR_SEQ, 'MKL', 'Маклер', 1);
 INSERT INTO ATTR_GRP(attr_grp_id, attr_id, grp_id, attr_ui_status) 
 	VALUES (NEXT VALUE FOR ATTR_GRP_SEQ, CURRENT VALUE FOR ATTR_SEQ, 1, 1);
 	
 INSERT INTO ATTR_DICTIONARY(attr_id, attr_name, attr_desc, attr_status) 
-	VALUES (NEXT VALUE FOR ATTR_SEQ, 'SLD', '������', 1);
+	VALUES (NEXT VALUE FOR ATTR_SEQ, 'SLD', 'Сладно', 1);
 INSERT INTO ATTR_GRP(attr_grp_id, attr_id, grp_id, attr_ui_status) 
 	VALUES (NEXT VALUE FOR ATTR_GRP_SEQ, CURRENT VALUE FOR ATTR_SEQ, 1, 1);
 	
 INSERT INTO ATTR_DICTIONARY(attr_id, attr_name, attr_desc, attr_status) 
-	VALUES (NEXT VALUE FOR ATTR_SEQ, 'HND', '�������', 1);
+	VALUES (NEXT VALUE FOR ATTR_SEQ, 'HND', 'Не помню что это', 1);
 INSERT INTO ATTR_GRP(attr_grp_id, attr_id, grp_id, attr_ui_status) 
 	VALUES (NEXT VALUE FOR ATTR_GRP_SEQ, CURRENT VALUE FOR ATTR_SEQ, 1, 0);
 	
 INSERT INTO ATTR_DICTIONARY(attr_id, attr_name, attr_desc, attr_status) 
-	VALUES (NEXT VALUE FOR ATTR_SEQ, 'APP', '���������', 1);
+	VALUES (NEXT VALUE FOR ATTR_SEQ, 'APP', 'Кваритира', 1);
 INSERT INTO ATTR_GRP(attr_grp_id, attr_id, grp_id, attr_ui_status) 
 	VALUES (NEXT VALUE FOR ATTR_GRP_SEQ, CURRENT VALUE FOR ATTR_SEQ, 2, 1);
 	
 INSERT INTO ATTR_DICTIONARY(attr_id, attr_name, attr_desc, attr_status) 
-	VALUES (NEXT VALUE FOR ATTR_SEQ, 'HSE', '���', 1);
+	VALUES (NEXT VALUE FOR ATTR_SEQ, 'HSE', 'Дом', 1);
 INSERT INTO ATTR_GRP(attr_grp_id, attr_id, grp_id, attr_ui_status) 
 	VALUES (NEXT VALUE FOR ATTR_GRP_SEQ, CURRENT VALUE FOR ATTR_SEQ, 2, 1);
 	
 INSERT INTO ATTR_DICTIONARY(attr_id, attr_name, attr_desc, attr_status) 
-	VALUES (NEXT VALUE FOR ATTR_SEQ, 'RM', '�������', 1);
+	VALUES (NEXT VALUE FOR ATTR_SEQ, 'RM', 'Комната', 1);
 INSERT INTO ATTR_GRP(attr_grp_id, attr_id, grp_id, attr_ui_status) 
 	VALUES (NEXT VALUE FOR ATTR_GRP_SEQ, CURRENT VALUE FOR ATTR_SEQ, 2, 1);
 	
 INSERT INTO ATTR_DICTIONARY(attr_id, attr_name, attr_desc, attr_status) 
-	VALUES (NEXT VALUE FOR ATTR_SEQ, 'PLT', '�������', 1);
+	VALUES (NEXT VALUE FOR ATTR_SEQ, 'PLT', 'Участок', 1);
 INSERT INTO ATTR_GRP(attr_grp_id, attr_id, grp_id, attr_ui_status) 
 	VALUES (NEXT VALUE FOR ATTR_GRP_SEQ, CURRENT VALUE FOR ATTR_SEQ, 2, 1);
 	
 INSERT INTO ATTR_DICTIONARY(attr_id, attr_name, attr_desc, attr_status) 
-	VALUES (NEXT VALUE FOR ATTR_SEQ, 'SVR', '�����������', 1);
+	VALUES (NEXT VALUE FOR ATTR_SEQ, 'SVR', 'Суворовский', 1);
 INSERT INTO ATTR_GRP(attr_grp_id, attr_id, grp_id, attr_ui_status) 
 	VALUES (NEXT VALUE FOR ATTR_GRP_SEQ, CURRENT VALUE FOR ATTR_SEQ, 3, 1);
 INSERT INTO ATTR_DICTIONARY(attr_id, attr_name, attr_desc, attr_status) 
-	VALUES (NEXT VALUE FOR ATTR_SEQ, 'PRM', '����������', 1);
+	VALUES (NEXT VALUE FOR ATTR_SEQ, 'PRM', 'Приморский', 1);
 INSERT INTO ATTR_GRP(attr_grp_id, attr_id, grp_id, attr_ui_status) 
 	VALUES (NEXT VALUE FOR ATTR_GRP_SEQ, CURRENT VALUE FOR ATTR_SEQ, 3, 1);
 	
