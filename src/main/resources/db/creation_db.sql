@@ -29,6 +29,7 @@ CREATE TABLE PHONE(
    phone_desc 	VARCHAR(50) 	NOT NULL,
    phone_src_id NUMERIC (5) 		NOT NULL,
    phone_date 	DATE 			NOT NULL,
+   last_update_date DATE        NOT NULL,
    phone_status NUMERIC (1) 		NOT NULL
  );
  

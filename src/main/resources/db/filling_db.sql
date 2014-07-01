@@ -86,10 +86,14 @@ INSERT INTO ATTR_DICTIONARY(attr_id, attr_name, attr_desc, attr_status)
 INSERT INTO ATTR_GRP(attr_grp_id, attr_id, grp_id, attr_ui_status) 
 	VALUES (NEXT VALUE FOR ATTR_GRP_SEQ, CURRENT VALUE FOR ATTR_SEQ, 4, 1);
 	
-INSERT INTO ATTR_DICTIONARY(attr_id, attr_name, attr_desc, attr_status) 
-	VALUES (NEXT VALUE FOR ATTR_SEQ, 'FPLUS', '4+', 1);
-INSERT INTO ATTR_GRP(attr_grp_id, attr_id, grp_id, attr_ui_status) 
-	VALUES (NEXT VALUE FOR ATTR_GRP_SEQ, CURRENT VALUE FOR ATTR_SEQ, 4, 1);
 
+INSERT INTO PHONE(phone_id, phone_num, phone_desc, phone_src_id, phone_date, last_update_date, phone_status)
+	VALUES (NEXT VALUE FOR PHONE_SEQ, '0936783813', 'my phone number', 1, SYSDATE, SYSDATE, 1);
+
+INSERT INTO PHONE(phone_id, phone_num, phone_desc, phone_src_id, phone_date, last_update_date, phone_status)
+	VALUES (NEXT VALUE FOR PHONE_SEQ, '0935325514', 'phone number from aviso', 5, SYSDATE, SYSDATE, 1);
+
+INSERT INTO PHONE(phone_id, phone_num, phone_desc, phone_src_id, phone_date, last_update_date, phone_status)
+	VALUES (NEXT VALUE FOR PHONE_SEQ, '0675325598', 'phone number from makler', 6, SYSDATE, SYSDATE, 1);
 commit;	
 	
