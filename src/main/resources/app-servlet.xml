@@ -26,7 +26,7 @@
 
     <bean class="org.springframework.web.servlet.view.BeanNameViewResolver" p:order="1" />
 
-    <bean id="JSON" class="org.springframework.web.servlet.view.json.MappingJackson2JsonView" />
+    <!--<bean id="JSON" class="org.springframework.web.servlet.view.json.MappingJackson2JsonView" />-->
 
     <mvc:annotation-driven conversion-service="conversionService" />
 
