@@ -4,11 +4,8 @@ $(function () {
         modifyTelNumber('#phoneNumberSearch');
     });
 
-    $('#phoneNumberAdd').mouseout(function () {
-        modifyTelNumber('#phoneNumberAdd');
-    });
-
     $('#searchTel').click(function () {
+        $("#phoneDetails").empty();
         var telNumber = $.trim($('#phoneNumberSearch').val());
         if (telNumber.length == 13 && isNumeric(telNumber)) {
             $.ajax({
@@ -16,15 +13,46 @@ $(function () {
                 url : 'phoneNumSearch',
                 data : { telNumber: telNumber},
                 dataType: 'json',
-                success : function(data) {
-                    alert(data);
-                }
+                success : successHandler
             });
 
         } else {
             errorTelNumber('#searchTelMsg', telNumber);
         }
     });
+
+    function successHandler(data){
+        $("#phoneDetails").empty();
+        if (data.phoneNumber){
+            updatePhone(data);
+        } else {
+            numberNotFound();
+        }
+
+    }
+    function updatePhone(data){
+        var updatePhoneTemplate = $("#updatePhoneNumberTemplate");
+        var source = data.phoneSource ? data.phoneSource.description : "";
+        var data = [
+            {
+                phoneId: data.phoneId,
+                phoneNumber: data.phoneNumber,
+                phoneAddedDate: data.phoneAddedDate,
+                phoneSource: source,
+                phoneDescription: data.phoneDescription
+            }
+        ];
+        updatePhoneTemplate.tmpl(data).appendTo("#phoneDetails");
+
+    }
+    function numberNotFound(){
+        $("#phoneNotFoundTemplate").tmpl().appendTo("#phoneDetails");
+        $("#addPhoneNumber").click(function () {
+            $("#phoneDetails").empty();
+            $("#addPhoneNumberTemplate").tmpl().appendTo("#phoneDetails");
+            $("#phoneNumberAdd").val($("#phoneNumberSearch").val())
+        });
+    }
 
     function modifyTelNumber(idSelector) {
         var telNumber = $.trim($(idSelector).val()).replace(/\s+/g, '');
@@ -43,7 +71,7 @@ $(function () {
     }
 
     function isNumeric(str) {
-        return /^\d+$/.test(str);
+        return /^ *[0-9][0-9 ]*$/.test(str);
     }
 
 })
