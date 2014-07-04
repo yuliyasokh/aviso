@@ -13,10 +13,6 @@
         <property name="dataSource" ref="dataSource"/>
     </bean>
 
-    <bean id="dictionaryDao" class="com.luxoft.aviso.server.dao.impl.DictionaryImpl">
-        <property name="dataSource" ref="dataSource"/>
-    </bean>
-
     <beans profile="inmemory, default">
         <jdbc:embedded-database id="dataSource" type="HSQL">
             <jdbc:script location="classpath*:db/creation_db.sql"/>
