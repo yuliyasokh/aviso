@@ -10,6 +10,8 @@ CREATE SEQUENCE OBJECT_PHONE_SEQ 	INCREMENT BY 1 START WITH 1000;
 
 INSERT INTO ATTR_DICTIONARY(attr_id, attr_name, attr_desc, attr_status) 
 	VALUES (NEXT VALUE FOR  ATTR_SEQ, 'SRC', 'Источники', 1);
+INSERT INTO ATTR_GRP(attr_grp_id, attr_id, grp_id, attr_ui_status)
+	VALUES (NEXT VALUE FOR ATTR_GRP_SEQ, CURRENT VALUE FOR ATTR_SEQ, 1, 1);
 INSERT INTO ATTR_DICTIONARY(attr_id, attr_name, attr_desc, attr_status) 
 	VALUES (NEXT VALUE FOR ATTR_SEQ, 'TYP', 'Типы объектов', 1);
 INSERT INTO ATTR_DICTIONARY(attr_id, attr_name, attr_desc, attr_status)
