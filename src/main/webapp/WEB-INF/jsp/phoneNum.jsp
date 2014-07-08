@@ -4,9 +4,7 @@
 
 <html>
 <head>
-    <title>
-        Телефоный справочник
-    </title>
+    <title><fmt:message key="title.phoneBook"/></title>
 </head>
 <body>
 <div id="content">

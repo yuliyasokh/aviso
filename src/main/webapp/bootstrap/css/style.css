@@ -36,3 +36,8 @@ input[type="checkbox"]{
     color: red;
     font-size: 14px;
 }
+
+#versionSourcesTbl th, #versionSourcesTbl td{
+    border-left: 1px solid #dddddd;
+    border-right: 1px solid #dddddd;
+}

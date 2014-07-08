@@ -1,6 +1,6 @@
 package com.luxoft.aviso.web;
 
-import com.luxoft.aviso.server.service.DictionaryService;
+import com.luxoft.aviso.server.service.SourceVersionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -12,12 +12,12 @@ import java.util.Locale;
 public class CommonController {
 
     @Autowired
-    private DictionaryService dictionaryService;
+    private SourceVersionService sourceVersionService;
 
     @RequestMapping(value = "/versionObjects")
     public void versionObjects( Model model) {
         Locale.setDefault(Locale.ENGLISH);
-        model.addAttribute("papers", dictionaryService.getAllSources());
+        model.addAttribute("sources", sourceVersionService.getAllSourceVersion());
     }
 
 

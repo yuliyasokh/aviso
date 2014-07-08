@@ -17,6 +17,7 @@ import java.util.Locale;
 public class SearchController {
 
     public static final String SEARCH_ALL = "search.all";
+    private static final String ADDED_FROM_UI = "Номер был добавлен в телефоном справочнике.";
 
     @Autowired
     private DictionaryService dictionaryService;
@@ -27,7 +28,6 @@ public class SearchController {
     @RequestMapping(value = "/search")
     public String mainSearch( Model model) {
         Locale.setDefault(Locale.ENGLISH);
-
         model.addAttribute("papers", dictionaryService.getAllSources());
         model.addAttribute("districts", dictionaryService.getAllDistricts());
         model.addAttribute("types", dictionaryService.getAllObjectTypes());
@@ -45,6 +45,38 @@ public class SearchController {
     Phone getPhoneByNumber(String telNumber) {
         Locale.setDefault(Locale.ENGLISH);
         return phoneService.getPhoneByNumber(telNumber);
+    }
+
+    @RequestMapping(value = "/phoneNum/phoneNumAdd", method = RequestMethod.GET)
+    public
+    @ResponseBody
+    void addPhoneNumber(String telNumber, String telDescription) {
+        Locale.setDefault(Locale.ENGLISH);
+        Phone phone = new Phone();
+        phone.setPhoneNumber(telNumber);
+        phone.setPhoneDescription(telDescription + " " + ADDED_FROM_UI);
+        phoneService.addPhoneNumberNoReturn(phone);
+    }
+
+    @RequestMapping(value = "/phoneNum/phoneNumDel", method = RequestMethod.GET)
+    public
+    @ResponseBody
+    void deletePhoneNumber(String phoneId) {
+        Locale.setDefault(Locale.ENGLISH);
+        Phone phone = new Phone();
+        phone.setPhoneId(Integer.decode(phoneId));
+        phoneService.deletePhoneNumber(phone);
+    }
+
+    @RequestMapping(value = "/phoneNum/phoneNumUpd", method = RequestMethod.GET)
+    public
+    @ResponseBody
+    void updatePhoneNumber(String phoneId, String telDescription) {
+        Locale.setDefault(Locale.ENGLISH);
+        Phone phone = new Phone();
+        phone.setPhoneId(Integer.decode(phoneId));
+        phone.setPhoneDescription(telDescription);
+        phoneService.updatePhoneNumber(phone);
     }
 
 }

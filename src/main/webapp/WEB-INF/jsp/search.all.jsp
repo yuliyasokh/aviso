@@ -4,7 +4,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 
-<head><title>Поиск недвижимости</title></head>
+<head><title><fmt:message key="title.search"/></title></head>
 <body>
 <div id="content">
     <table class="mainTbl">

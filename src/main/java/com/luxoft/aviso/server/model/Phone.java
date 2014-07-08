@@ -10,6 +10,7 @@ public class Phone {
     private String phoneDescription;
     private Attribute phoneSource;
     private Date phoneAddedDate;
+    private Date updateDate;
     private Integer phoneStatus;
 
     public Integer getPhoneId() {
@@ -50,6 +51,14 @@ public class Phone {
 
     public void setPhoneAddedDate(Date phoneAddedDate) {
         this.phoneAddedDate = phoneAddedDate;
+    }
+
+    public Date getUpdateDate() {
+        return updateDate;
+    }
+
+    public void setUpdateDate(Date updateDate) {
+        this.updateDate = updateDate;
     }
 
     public Integer getPhoneStatus() {

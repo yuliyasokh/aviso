@@ -10,7 +10,7 @@
             <td>
             </td>
             <td>
-                <input type='tel' id='phoneNumberAdd' value=\${phoneNumber} disabled>
+                <input type='tel' id='phoneNumberAdd' value="\${phoneNumber}" disabled>
             </td>
         </tr>
         <tr>
@@ -26,7 +26,7 @@
         <tr>
             <td></td>
             <td></td>
-            <td><button type="button" class="btn-success btn-large"><fmt:message key="action.add"/></button></td>
+            <td><button type="button" id="addPhoneBtn" class="btn-success btn-large"><fmt:message key="action.add"/></button></td>
         </tr>
     </table>
 </template>
@@ -53,6 +53,16 @@
                 <input type='text' disabled value="\${phoneAddedDate}">
             </td>
         </tr>
+        <tr>
+            <td>
+                <fmt:message key="phone.dateUpdate"/>:
+            </td>
+            <td>
+            </td>
+            <td>
+                <input type='text' disabled value="\${updateDate}">
+            </td>
+        </tr>
             <tr>
                 <td>
                     <fmt:message key="phone.source"/>:
@@ -70,14 +80,14 @@
             <td>
             </td>
             <td>
-                <textarea id="descr" value="\${phoneDescription}"></textarea>
+                <textarea id="descr"></textarea>
             </td>
         </tr>
         <tr>
-            <td><button type="button" id="deletePhoneNumber" class="btn-danger btn-large"><fmt:message key="action.delete"/></button></td>
+            <td><button type="button" id="deletePhoneNumberBtn" class="btn-danger btn-large"><fmt:message key="action.delete"/></button></td>
             <td></td>
             <td style="text-align: right">
-                <button type="button" id="updatePhoneNumber" class="btn-warning btn-large"><fmt:message key="action.update"/></button>
+                <button type="button" id="updatePhoneNumberBtn" class="btn-warning btn-large"><fmt:message key="action.update"/></button>
             </td>
         </tr>
     </table>

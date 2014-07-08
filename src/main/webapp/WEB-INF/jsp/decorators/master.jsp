@@ -7,15 +7,19 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 
     <title><decorator:title default="Недвижимость"/></title>
-    <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
-    <script src="http://code.jquery.com/ui/1.10.2/jquery-ui.js" type="text/javascript"></script>
-    <script src="http://ajax.microsoft.com/ajax/jquery.templates/beta1/jquery.tmpl.js" type="text/javascript"></script>
+    <script src="${pageContext.request.contextPath}/js/jquery-1.11.1.js" type="text/javascript"></script>
+    <script src="${pageContext.request.contextPath}/js/jquery.tmpl.js" type="text/javascript"></script>
+<%--<script src="http://code.jquery.com/jquery-1.9.1.js"></script>--%>
+    <%--<script src="http://code.jquery.com/ui/1.10.2/jquery-ui.js" type="text/javascript"></script>--%>
+    <%--<script src="http://ajax.microsoft.com/ajax/jquery.templates/beta1/jquery.tmpl.js" type="text/javascript"></script>--%>
     <script src="${pageContext.request.contextPath}/js/main.js" type="text/javascript"></script>
     <script src="${pageContext.request.contextPath}/js/search.js" type="text/javascript"></script>
     <script src="${pageContext.request.contextPath}/js/phoneNum.js" type="text/javascript"></script>
+    <script src="${pageContext.request.contextPath}/js/versionObjects.js" type="text/javascript"></script>
     <script src="${pageContext.request.contextPath}/bootstrap/js/bootstrap.js" type="text/javascript"></script>
 
-    <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.2/themes/smoothness/jquery-ui.css" />
+
+    <%--<link rel="stylesheet" href="http://code.jquery.com/ui/1.10.2/themes/smoothness/jquery-ui.css" />--%>
     <link href="${pageContext.request.contextPath}/bootstrap/css/bootstrap.css" rel="stylesheet">
     <link href="${pageContext.request.contextPath}/bootstrap/css/style.css" rel="stylesheet">
     <link href="${pageContext.request.contextPath}/bootstrap/css/bootstrap-responsive.css" rel="stylesheet">

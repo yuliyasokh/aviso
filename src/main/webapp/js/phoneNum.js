@@ -28,30 +28,63 @@ $(function () {
         } else {
             numberNotFound();
         }
-
     }
+
     function updatePhone(data){
         var updatePhoneTemplate = $("#updatePhoneNumberTemplate");
-        var source = data.phoneSource ? data.phoneSource.description : "";
-        var data = [
+        var updateData = [
             {
                 phoneId: data.phoneId,
                 phoneNumber: data.phoneNumber,
                 phoneAddedDate: data.phoneAddedDate,
-                phoneSource: source,
-                phoneDescription: data.phoneDescription
+                updateDate: data.updateDate,
+                phoneSource: data.phoneSource ? data.phoneSource.description : ""
             }
         ];
-        updatePhoneTemplate.tmpl(data).appendTo("#phoneDetails");
-
+        updatePhoneTemplate.tmpl(updateData).appendTo("#phoneDetails");
+        $("#descr").val(data.phoneDescription);
+        $("#updatePhoneNumberBtn").click(function () {
+            var data = {
+                phoneId: $("#phoneId").val(),
+                telDescription: $("#descr").val()
+            };
+            updateDeleteAddPhoneNumber('phoneNumUpd', data);
+        });
+        $("#deletePhoneNumberBtn").click(function () {
+            updateDeleteAddPhoneNumber('phoneNumDel', { phoneId: $("#phoneId").val()});
+        })
     }
+
+    function updateDeleteAddPhoneNumber(url, data) {
+        $.ajax({
+            type: 'GET',
+            url: url,
+            data: data,
+            dataType: 'json',
+            success: successChangesApplied
+        });
+    }
+
     function numberNotFound(){
         $("#phoneNotFoundTemplate").tmpl().appendTo("#phoneDetails");
+        var telNumber = $("#phoneNumberSearch").val();
         $("#addPhoneNumber").click(function () {
             $("#phoneDetails").empty();
-            $("#addPhoneNumberTemplate").tmpl().appendTo("#phoneDetails");
-            $("#phoneNumberAdd").val($("#phoneNumberSearch").val())
+            $("#addPhoneNumberTemplate").tmpl([{phoneNumber: telNumber}]).appendTo("#phoneDetails");
+            $("#addPhoneBtn").click(function () {
+                var data = [
+                    {
+                        telNumber: telNumber.replace(/\s+/g, ''),
+                        telDescription: $("#descr").val()
+                    }
+                ];
+                updateDeleteAddPhoneNumber('phoneNumAdd', data);
+            })
         });
+    }
+
+    function successChangesApplied(){
+        $("#phoneDetails").empty();
     }
 
     function modifyTelNumber(idSelector) {
@@ -74,4 +107,4 @@ $(function () {
         return /^ *[0-9][0-9 ]*$/.test(str);
     }
 
-})
+});

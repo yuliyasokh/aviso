@@ -19,8 +19,18 @@ import java.util.List;
 public class PhoneImpl implements PhoneDao{
 
     private static String GET_PHONES = "SELECT * FROM phone WHERE 1 = 1";
+    private static String DELETE_PHONE = "DELETE FROM phone where 1 = 1";
     private static String BY_NUMBER = " AND phone_num =: phoneNumber ";
     private static String BY_ID = " AND PHONE_ID =: phoneId ";
+    private static String UPDATE_PHONE = "";
+    private static String INSERT_PHONE_NUM = "INSERT INTO phone VALUES(" +
+            "PHONE_SEQ.NEXTVAL, " +
+            ":phoneNumber, " +
+            ":phoneDescription, " +
+            "NULL, " +
+            "SYSDATE, " +
+            "SYSDATE, " +
+            "1)";
 
     @Autowired
     private DictionaryDao dictionaryDao;
@@ -48,27 +58,29 @@ public class PhoneImpl implements PhoneDao{
 
     @Override
     public Phone addPhoneNumber(Phone phone) {
-        return null;
+        addPhoneNumberNoReturn(phone);
+        return getPhoneByNumber(phone.getPhoneNumber());
     }
 
     @Override
     public void addPhoneNumberNoReturn(Phone phone) {
-
+        jdbcTemplate.update(INSERT_PHONE_NUM, phone.getPhoneNumber(), phone.getPhoneDescription());
     }
 
     @Override
     public void deletePhoneNumber(Phone phone) {
-
+        jdbcTemplate.update(DELETE_PHONE + BY_ID, phone.getPhoneId());
     }
 
     @Override
     public Phone updatePhoneNumber(Phone phone) {
-        return null;
+        jdbcTemplate.update(UPDATE_PHONE, phone.getPhoneDescription(), phone.getPhoneId());
+        return getPhoneById(phone.getPhoneId());
     }
 
     @Override
     public List<Phone> getAllPhones() {
-        return jdbcTemplate.query("select * from phone", new PhoneRowMapper());
+        return jdbcTemplate.query(GET_PHONES, new PhoneRowMapper());
     }
 
     private class PhoneRowMapper implements RowMapper{
@@ -78,6 +90,7 @@ public class PhoneImpl implements PhoneDao{
             phone.setPhoneNumber(rs.getString("PHONE_NUM"));
             phone.setPhoneDescription(rs.getString("PHONE_DESC"));
             phone.setPhoneAddedDate(rs.getDate("PHONE_DATE"));
+            phone.setUpdateDate(rs.getDate("LAST_UPDATE_DATE"));
             phone.setPhoneStatus(rs.getInt("PHONE_STATUS"));
             Integer sourceId = rs.getInt("PHONE_SRC_ID");
             if (sourceId != 0) {

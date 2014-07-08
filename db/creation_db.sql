@@ -28,12 +28,12 @@ CREATE TABLE VERSION(
    attr_id 			NUMBER(5) 	NOT NULL,
    version_date 	DATE 		NOT NULL,
    version_status 	NUMBER(1) 	NOT NULL
- );  
- 
-CREATE TABLE PHONE(  
-   phone_id   	NUMBER(10) 		NOT NULL, 
+ );
+
+CREATE TABLE PHONE(
+   phone_id   	NUMBER(10) 		NOT NULL,
    phone_num  	VARCHAR2(10) 		NOT NULL,
-   phone_desc 	  NVARCHAR2(50) 	NOT NULL,
+   phone_desc 	  NVARCHAR2(150) 	NOT NULL,
    phone_src_id   NUMBER(5)         ,
    phone_date 	    DATE 			  NOT NULL,
    last_update_date DATE        NOT NULL,
@@ -45,6 +45,7 @@ CREATE TABLE OBJECT(
    object_type_id  	NUMBER(5) 		NOT NULL,
    object_dstr_id 	NUMBER(5) 		NOT NULL,
    object_src_id 	NUMBER(5) 		NOT NULL,
+   object_nr_id   NUMBER(5)     NOT NULL,
    object_desc 		NVARCHAR2(100) 	NOT NULL
  ); 
  
@@ -88,6 +89,9 @@ ALTER TABLE OBJECT ADD CONSTRAINT object_dstr_id_attr_fkey
 
 ALTER TABLE OBJECT ADD CONSTRAINT object_src_id_attr_fkey 
 	FOREIGN KEY (object_src_id) REFERENCES ATTR_DICTIONARY(attr_id) ON DELETE CASCADE;
+
+ALTER TABLE OBJECT ADD CONSTRAINT object_nr_id_attr_fkey
+	FOREIGN KEY (object_nr_id) REFERENCES ATTR_DICTIONARY(attr_id) ON DELETE CASCADE;
 	
 ALTER TABLE OBJECT_PHONE ADD CONSTRAINT OBJECT_PHONE_id_fkey 
 	FOREIGN KEY (object_id) REFERENCES OBJECT(object_id) ON DELETE CASCADE;

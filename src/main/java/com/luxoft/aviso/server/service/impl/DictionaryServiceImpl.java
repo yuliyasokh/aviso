@@ -15,10 +15,6 @@ public class DictionaryServiceImpl implements DictionaryService{
     @Autowired
     private DictionaryDao dictionaryDao;
 
-//    public DictionaryServiceImpl(DictionaryDao dictionaryDao) {
-//        this.dictionaryDao = dictionaryDao;
-//    }
-
     @Override
     public List<Attribute> getAllDistricts() {
         return dictionaryDao.getAllDistricts();

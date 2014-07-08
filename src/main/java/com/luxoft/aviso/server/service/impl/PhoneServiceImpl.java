@@ -36,12 +36,12 @@ public class PhoneServiceImpl implements PhoneService{
 
     @Override
     public void addPhoneNumberNoReturn(Phone phone) {
-
+        phoneDao.addPhoneNumberNoReturn(phone);
     }
 
     @Override
     public void deletePhoneNumber(Phone phone) {
-
+        phoneDao.deletePhoneNumber(phone);
     }
 
     @Override

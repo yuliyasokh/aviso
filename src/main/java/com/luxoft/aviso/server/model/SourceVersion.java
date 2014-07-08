@@ -10,30 +10,18 @@ import java.util.Date;
  * To change this template use File | Settings | File Templates.
  */
 public class SourceVersion {
-    private Integer paperId;
-    private String paperName;
+    private Integer sourceVersionId;
+    private Attribute source;
     private Date version;
+    private String status;
 
-    public SourceVersion(Integer paperId, String paperName, Date version) {
-        this.paperId = paperId;
-        this.paperName = paperName;
-        this.version = version;
+
+    public Integer getSourceVersionId() {
+        return sourceVersionId;
     }
 
-    public Integer getPaperId() {
-        return paperId;
-    }
-
-    public void setPaperId(Integer paperId) {
-        this.paperId = paperId;
-    }
-
-    public String getPaperName() {
-        return paperName;
-    }
-
-    public void setPaperName(String paperName) {
-        this.paperName = paperName;
+    public void setSourceVersionId(Integer sourceVersionId) {
+        this.sourceVersionId = sourceVersionId;
     }
 
     public Date getVersion() {
@@ -42,5 +30,21 @@ public class SourceVersion {
 
     public void setVersion(Date version) {
         this.version = version;
+    }
+
+    public Attribute getSource() {
+        return source;
+    }
+
+    public void setSource(Attribute source) {
+        this.source = source;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
     }
 }

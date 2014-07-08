@@ -19,5 +19,5 @@ public interface PhoneDao {
 
     Phone updatePhoneNumber(Phone phone);
 
-    List<Phone> getAllPhones();
+    List getAllPhones();
 }
