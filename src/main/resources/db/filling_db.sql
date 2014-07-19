@@ -98,5 +98,19 @@ INSERT INTO PHONE(phone_id, phone_num, phone_desc, phone_src_id, phone_date, las
 
 INSERT INTO PHONE(phone_id, phone_num, phone_desc, phone_src_id, phone_date, last_update_date, phone_status)
 	VALUES (NEXT VALUE FOR PHONE_SEQ, '0675325598', 'phone number from makler', 6, SYSDATE, SYSDATE, 1);
+
+
+INSERT INTO VERSION(version_id, attr_id, version_date, version_status)
+	VALUES (NEXT VALUE FOR VERSION_SEQ, 5, SYSDATE, 0);
+
+INSERT INTO VERSION(version_id, attr_id, version_date, version_status)
+	VALUES (NEXT VALUE FOR VERSION_SEQ, 5, SYSDATE, 1);
+
+INSERT INTO VERSION(version_id, attr_id, version_date, version_status)
+	VALUES (NEXT VALUE FOR VERSION_SEQ, 6, SYSDATE, 1);
+
+INSERT INTO VERSION(version_id, attr_id, version_date, version_status)
+	VALUES (NEXT VALUE FOR VERSION_SEQ, 7, SYSDATE, 1);
+
 commit;	
 	
