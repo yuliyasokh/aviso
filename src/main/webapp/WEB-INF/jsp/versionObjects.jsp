@@ -25,7 +25,7 @@
                 </td>
                 <td style="text-align: right">
                     <div class="btn-group">
-                        <a class="btn btn-info" href="${paper.paperId}">
+                        <a class="btn btn-info startParser" name="${sources.source.id}">
                             <fmt:message key="action.startParser"/>
                         </a>
                     </div>
