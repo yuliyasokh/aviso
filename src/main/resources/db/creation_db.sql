@@ -38,6 +38,7 @@ CREATE TABLE OBJECT(
    object_type_id  	NUMERIC (5) 		NOT NULL,
    object_dstr_id 	NUMERIC (5) 		NOT NULL,
    object_src_id 	NUMERIC (5) 		NOT NULL,
+   object_nr_id   NUMERIC(5)     NOT NULL,
    object_link    VARCHAR(100) 	NOT NULL,
    object_desc 		VARCHAR(300) 	NOT NULL
  ); 
