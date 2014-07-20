@@ -17,8 +17,8 @@ public class CommonController {
     @Autowired
     private SourceVersionService sourceVersionService;
 
-   // @Autowired
-   // private HtmlHelper htmlHelper;
+    @Autowired
+    private HtmlHelper htmlHelper;
 
     @RequestMapping(value = "/versionObjects")
     public void versionObjects( Model model) {
@@ -31,7 +31,7 @@ public class CommonController {
     @ResponseBody
     void startParserForSource(String sourceId) {
         Locale.setDefault(Locale.ENGLISH);
-    //    htmlHelper.enter();
+        htmlHelper.enter();
 
     }
 
