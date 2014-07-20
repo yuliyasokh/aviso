@@ -8,6 +8,7 @@ public class Object {
     private Attribute objectDistrict;
     private Attribute objectSource;
     private Attribute objectNumberOfRooms;
+    private String objectTitle;
     private String objectLink;
     private String objectDesc;
 
@@ -65,5 +66,13 @@ public class Object {
 
     public void setObjectNumberOfRooms(Attribute objectNumberOfRooms) {
         this.objectNumberOfRooms = objectNumberOfRooms;
+    }
+
+    public String getObjectTitle() {
+        return objectTitle;
+    }
+
+    public void setObjectTitle(String objectTitle) {
+        this.objectTitle = objectTitle;
     }
 }

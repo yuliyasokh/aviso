@@ -46,6 +46,7 @@ CREATE TABLE OBJECT(
    object_dstr_id 	NUMBER(5) 		NOT NULL,
    object_src_id 	NUMBER(5) 		NOT NULL,
    object_nr_id   NUMBER(5)     NOT NULL,
+   object_title   NVARCHAR2(100) NOT NULL,
    object_link    NVARCHAR2(100) NOT NULL,
    object_desc 		NVARCHAR2(200) 	NOT NULL
  ); 
