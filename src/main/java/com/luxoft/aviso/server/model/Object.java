@@ -1,6 +1,8 @@
 package com.luxoft.aviso.server.model;
 
 
+import java.util.List;
+
 public class Object {
 
     private Integer objectId;
@@ -11,6 +13,7 @@ public class Object {
     private String objectTitle;
     private String objectLink;
     private String objectDesc;
+    private List<String> phoneNumber;
 
     public Attribute getObjectDistrict() {
         return objectDistrict;
@@ -74,5 +77,13 @@ public class Object {
 
     public void setObjectTitle(String objectTitle) {
         this.objectTitle = objectTitle;
+    }
+
+    public List<String> getPhoneNumber() {
+        return phoneNumber;
+    }
+
+    public void setPhoneNumber(List<String> phoneNumber) {
+        this.phoneNumber = phoneNumber;
     }
 }

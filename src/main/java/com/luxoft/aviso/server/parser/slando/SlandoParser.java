@@ -83,6 +83,7 @@ public class SlandoParser {
         object.setObjectSource(dao.getAttributeByNameAndType("Сландо", GroupType.SOURCE.getCode()));
         object.setObjectTitle(doc.title());
 
+
         return object;
     }
 
