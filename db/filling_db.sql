@@ -36,7 +36,7 @@ INSERT INTO ATTR_GRP(attr_grp_id, attr_id, grp_id, attr_ui_status)
 	VALUES (ATTR_GRP_SEQ.NEXTVAL, ATTR_SEQ.CURRVAL, 1, 1);	
 	
 INSERT INTO ATTR_DICTIONARY(attr_id, attr_name, attr_desc, attr_status) 
-	VALUES (ATTR_SEQ.NEXTVAL, 'SLD', 'Sladno', 1);
+	VALUES (ATTR_SEQ.NEXTVAL, 'SLD', 'Сландо', 1);
 INSERT INTO ATTR_GRP(attr_grp_id, attr_id, grp_id, attr_ui_status) 
 	VALUES (ATTR_GRP_SEQ.NEXTVAL, ATTR_SEQ.CURRVAL, 1, 1);	
 	

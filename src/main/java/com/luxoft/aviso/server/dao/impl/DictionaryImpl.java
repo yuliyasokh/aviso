@@ -5,7 +5,9 @@ import com.luxoft.aviso.server.dao.DictionaryDao;
 import com.luxoft.aviso.server.exception.AttributeNotFoundException;
 import com.luxoft.aviso.server.model.Attribute;
 import com.luxoft.aviso.server.model.GroupType;
+import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
@@ -26,9 +28,12 @@ public class DictionaryImpl implements DictionaryDao{
                                 "AND a.attr_status = 1 " +
                                 "AND g.attr_ui_status = 1 ";
 
-    private static String GET_BY_ID = "AND a.attr_id =:id";
+    private static String GET_BY_ID = "AND a.attr_id =:id ";
+    private static String GET_BY_NAME = "AND a.attr_desc =:attrName ";
 
     private JdbcTemplate jdbcTemplate;
+
+    private static Logger log = Logger.getLogger(DictionaryImpl.class.getName());
 
     @Autowired
     public void setDataSource(DataSource dataSource) {
@@ -53,6 +58,15 @@ public class DictionaryImpl implements DictionaryDao{
     @Override
     public List<Attribute> getAllNumberOfRooms() {
         return getAllAttributes(GroupType.NUMBER_OF_ROOMS.getCode());
+    }
+
+    public Attribute getAttributeByNameAndType(String attrName, String code) {
+        try {
+            return jdbcTemplate.queryForObject(QUERY + GET_BY_NAME, new BeanPropertyRowMapper<Attribute>(Attribute.class), code, attrName);
+        } catch (EmptyResultDataAccessException ex) {
+            log.error("Attribut with name " + attrName + " and group " + code + " not found");
+        }
+        return new Attribute();
     }
 
     @Override

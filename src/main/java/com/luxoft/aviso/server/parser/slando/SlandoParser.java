@@ -1,8 +1,9 @@
 package com.luxoft.aviso.server.parser.slando;
 
 
-import com.luxoft.aviso.server.model.ObjectAttr;
-import com.luxoft.aviso.server.parser.ObjectHelper;
+import com.luxoft.aviso.server.dao.DictionaryDao;
+import com.luxoft.aviso.server.model.GroupType;
+import com.luxoft.aviso.server.model.Object;
 import org.apache.log4j.Logger;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Attributes;
@@ -15,19 +16,17 @@ import org.springframework.stereotype.Component;
 
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.EnumMap;
 import java.util.List;
-import java.util.Map;
 
 @Component
 public class SlandoParser {
     private static Logger log = Logger.getLogger(SlandoParser.class.getName());
 
+    @Autowired
+    private DictionaryDao dao;
+
     private final String FIRST_PAGE = "http://odessa.od.slando.ua/nedvizhimost/prodazha-kvartir/?search%5Bprivate_business%5D=private&search%5Bdistrict_id%5D=91&currency=USD";
     private final String PAGE_COUNTER = "%5C&page=";
-
-    @Autowired
-    private ObjectHelper objectHelper;
 
     public void start() {
         Document doc;
@@ -54,13 +53,13 @@ public class SlandoParser {
     }
 
     private void parseObject(List<String> objectLinks) {
-        List<Map<ObjectAttr, String>> convertedObjects = new ArrayList<Map<ObjectAttr, String>>();
+        List<Object> objs = new ArrayList<Object>();
         long startTime = System.currentTimeMillis();
         log.info("Started parsing found objects");
         for (String objectLink : objectLinks) {
             try {
                 Document doc = Jsoup.connect(objectLink).get();
-                convertedObjects.add(parseObject(doc));
+                objs.add(parseObject(doc));
             } catch (IOException e) {
                 e.printStackTrace();
             }
@@ -71,22 +70,27 @@ public class SlandoParser {
         log.info("Time of parsing found objects " + totalTime / 1000 + " seconds");
     }
 
-    private Map<ObjectAttr, String> parseObject(Document doc) {
-        Map<ObjectAttr, String> parsedObject = new EnumMap<ObjectAttr, String>(ObjectAttr.class);
+    private Object parseObject(Document doc) {
 
-        String numberOfRooms = doc.select("tr.brbottdashc8").get(1).select("strong").get(0).childNode(0).toString();
+        String numberOfRooms = convertNumberOfRooms(doc.select("tr.brbottdashc8").get(1).select("strong").get(0).childNode(0).toString().trim());
         String desc = doc.select("#textContent").select("p.large").text();
 
-        objectHelper.setNumberOfRooms(parsedObject, numberOfRooms);
-        objectHelper.setDescription(parsedObject, desc);
-        objectHelper.setDistrict(parsedObject, "Suvorovskiy");
-        objectHelper.setSource(parsedObject, "Slando");
-        objectHelper.setLink(parsedObject, doc.baseUri());
-        objectHelper.setTitle(parsedObject, doc.title());
+        Object object = new Object();
+        object.setObjectDesc(desc);
+        object.setObjectLink(doc.baseUri());
+        object.setObjectDistrict(dao.getAttributeByNameAndType("Суворовский", GroupType.DISTRICT.getCode()));
+        object.setObjectNumberOfRooms(dao.getAttributeByNameAndType(numberOfRooms, GroupType.NUMBER_OF_ROOMS.getCode()));
+        object.setObjectSource(dao.getAttributeByNameAndType("Сландо", GroupType.SOURCE.getCode()));
+        object.setObjectTitle(doc.title());
 
-        return parsedObject;
-
+        return object;
     }
+
+    private String convertNumberOfRooms(String numberOfRooms) {
+        Integer numberRooms = Integer.valueOf(numberOfRooms);
+        return numberRooms > 3 ? "4+" : numberOfRooms;
+    }
+
 
     private List<String> parsePage(Document doc) {
         List<String> objectLinks = new ArrayList<String>();
